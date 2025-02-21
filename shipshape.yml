@@ -1,0 +1,27 @@
+collect:
+  core-extension-file:
+    file:read:
+      path: config/sync/core.extension.yml
+
+  lagoon_logs:
+    yaml:key:
+      input: core-extension-file
+      path: module.lagoon_logs
+
+  profile:
+    yaml:key:
+      input: core-extension-file
+      path: profile
+
+analyse:
+  lagoon-logs-check:
+    regex:not-match:
+      description: Lagoon logs module is not enabled
+      input: lagoon_logs
+      pattern: "^1$"
+
+  tide-profile-check:
+    regex:not-match:
+      description: Tide profile is not set
+      input: profile
+      pattern: "^tide$"
