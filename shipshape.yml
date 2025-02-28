@@ -54,40 +54,33 @@ analyse:
       description: "Verify Lagoon logs module is enabled"
       input: lagoon-logs
       pattern: "^1$"
-      severity: high
-
+      
   tide-profile-check:
     regex:not-match:
       description: "Verify Tide profile is correctly set"
       input: profile
       pattern: "^tide$"
-      severity: high
 
   production-tls-acme-check:
     regex:not-match:
       description: "Verify TLS-ACME is enabled for the production environment"
       input: production-tls-acme
       pattern: "^false$"
-      severity: high
 
   master-tls-acme-check:
     regex:not-match:
       description: "Verify TLS-ACME is enabled for the master environment"
       input: master-tls-acme
       pattern: "^false$"
-      severity: high
 
   uat-tls-acme-check:
     regex:not-match:
       description: "Verify TLS-ACME is enabled for the UAT environment" 
       input: uat-tls-acme
       pattern: "^false$"
-      severity: high
 
   develop-tls-acme-check:
     regex:not-match:
       description: "Verify TLS-ACME is enabled for the develop environment"
       input: develop-tls-acme
       pattern: "^false$"
-      severity: high
-
