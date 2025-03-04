@@ -84,3 +84,10 @@ analyse:
       description: "Verify TLS-ACME is enabled for the develop environment"
       input: develop-tls-acme
       pattern: "^false$"
+
+output:
+  stdout:
+    format: table
+  file:
+    path: results.junit
+    format: junit
